@@ -93,8 +93,9 @@ def perfect_powers(upto, coeff1, coeff2, PoWeR):
 
     primesold = prime_sieve(upto*6)
     primes = []
+    norm = coeff1**2 - 5*coeff2**2
     for p in primesold: 
-        if p % PoWeR == 1 and p <= upto: 
+        if p % PoWeR == 1 and p <= upto and norm%p != 0:
             primes.append(p)
 
     dictionary = {}
